@@ -97,11 +97,9 @@ isnum $COUNT "count"
 isnum $MAX "max"
 isnum $MIN "min"
 
-echo "count $COUNT, max $MAX, min $MIN, URL $URL,"
-
 COUNTER=0;
 while [ $COUNTER -lt $COUNT ]; do
-	RANNUM=$[ 1 + $[ RANDOM % 249 ]]
+	RANNUM=$[ 0 + $[ RANDOM % 249 ]]
         sleep $[ ( $RANDOM % $MAX )  + $MIN ]s
 	if [ $QUIET -eq 0 ]; then
 		proxychains curl -A "${ARRAY[$RANNUM]}" "$URL"
