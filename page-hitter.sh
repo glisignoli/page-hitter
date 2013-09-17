@@ -104,9 +104,9 @@ while [ $COUNTER -lt $COUNT ]; do
 	RANNUM=$[ 1 + $[ RANDOM % 249 ]]
         sleep $[ ( $RANDOM % $MAX )  + $MIN ]s
 	if [ $QUIET -eq 0 ]; then
-		echo proxychains curl -A "${ARRAY[$RANNUM]}" "$URL"
+		proxychains curl -A "${ARRAY[$RANNUM]}" "$URL"
 	else
-		echo proxychains curl -A "${ARRAY[$RANNUM]}" "$URL" >/dev/null
+		proxychains curl -A "${ARRAY[$RANNUM]}" "$URL" >/dev/null
 	fi
         let "COUNTER=$COUNTER + 1"
 done
