@@ -25,6 +25,7 @@ echo "\
 -m, --min; min time in seconds to wait before running (default: 120)
 -u, --url; url to use
 -h, --help; displays this
+-q, --quiet; No curl output
 " | column -t -s ";"
 }
 
