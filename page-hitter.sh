@@ -99,12 +99,12 @@ isnum $MIN "min"
 
 COUNTER=0;
 while [ $COUNTER -lt $COUNT ]; do
-	RANNUM=$[ 0 + $[ RANDOM % 249 ]]
-        sleep $[ ( $RANDOM % $MAX )  + $MIN ]s
 	if [ $QUIET -eq 0 ]; then
 		proxychains curl -A "${ARRAY[$RANNUM]}" "$URL"
 	else
 		proxychains curl -A "${ARRAY[$RANNUM]}" "$URL" >/dev/null
 	fi
+	RANNUM=$[ 0 + $[ RANDOM % 249 ]]
+        sleep $[ ( $RANDOM % $MAX )  + $MIN ]s
         let "COUNTER=$COUNTER + 1"
 done
